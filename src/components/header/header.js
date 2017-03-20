@@ -1,23 +1,38 @@
-require('./header.scss')
+//import our styles directly into the page
+require('./header.scss');
 
-app.component('headerComponent', {
+//export our component, we need 'app' as an argument to know which module this component belongs to
+module.exports = (app) => app.component('headerComponent', {
     template: require('./header.html'),
     controllerAs: '$ctrl',
     transclude: {},
     bindings: {
-        url:'=',
+        url: '=',
     },
-    controller: function ($http, $timeout, $scope) {
-        
-        var init = () => {
-            console.log(this, 'headerComponent');
-            //
-            //$timeout(function() {
-            //    //this.fff = gggg
-            //}, 3000);
+    controller: class headerComponent {
+
+        //we inject dependencies here but do not have access to bindings yet
+        constructor($http, $timeout) {
+            this.$http = $http;
+            this.$timeout = $timeout;
         }
 
-        init();
+        //this request retrieves all repos for user nazzanuk
+        exampleRequest() {
+            this.$http.get('https://api.github.com/users/nazzanuk/repos')
+                .then(response => {
+                    console.log('response', response.data);
+                });
+        }
+
+        //this runs automagically - we also now have access to our bindings
+        $onInit() {
+            console.log('headerComponent', this);
+            console.log('$', $);
+
+            //call an internal function
+            this.exampleRequest();
+        };
     }
 });
 

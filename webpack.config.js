@@ -1,7 +1,8 @@
 var path = require('path');
+var webpack = require("webpack");
 
 module.exports = {
-    entry: './src/app.js',
+    entry: ['./src/lib.js', './src/app.js'],
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'release')
@@ -11,19 +12,28 @@ module.exports = {
             {
                 test: /\.html$/,
                 use: 'html-loader'
-            },{
-                test: /\.scss$/,
-                use: [
-    	            { loader: "style-loader" }, 
-    	            { loader: "css-loader" }, 
-    	            { loader: "sass-loader" }
-                ]
+            },
+            {
+                test: /\.(scss|css)$/,
+                use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+            },
+            {
+                test: /\.(woff2?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: "file-loader?name=fonts/[name].[ext]"
             },
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader?presets[]=env'
-            }
+            },
+
         ]
-    }
+    },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ],
+    devtool: 'eval-source-map'
 };
