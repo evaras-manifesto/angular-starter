@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require("webpack");
 
+
 module.exports = {
     entry: ['./src/lib.js', './src/app.js'],
     output: {
@@ -30,10 +31,13 @@ module.exports = {
         ]
     },
     plugins: [
+        //jQuery must be included slightly differently
         new webpack.ProvidePlugin({
             $: "jquery",
-            jQuery: "jquery"
+            jQuery: "jquery",
+            _: "lodash",
         })
     ],
-    devtool: 'eval-source-map'
+    devtool: 'eval-source-map',
+    target: 'async-node'
 };

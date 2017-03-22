@@ -21,14 +21,13 @@ module.exports = (app) => app.component('headerComponent', {
         exampleRequest() {
             this.$http.get('https://api.github.com/users/nazzanuk/repos')
                 .then(response => {
-                    console.log('response', response.data);
+                    console.info('response', response.data);
                 });
         }
 
         //this runs automagically - we also now have access to our bindings
         $onInit() {
-            console.log('headerComponent', this);
-            console.log('$', $);
+            console.info('headerComponent', this);
 
             //call an internal function
             this.exampleRequest();

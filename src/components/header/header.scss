@@ -1,6 +1,8 @@
+@import "./../../app";
+
 header-component {
 	display: block;
 	height: 100px;
-	background: blue;
-
+	background: $lightGray;
+	padding: 30px;
 }
