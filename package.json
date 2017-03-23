@@ -29,5 +29,10 @@
     "style-loader": "^0.14.1",
     "svg-inline-loader": "^0.7.1",
     "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "install": "^0.8.7",
+    "npm": "^4.4.1",
+    "webpack": "^2.3.1"
   }
 }
