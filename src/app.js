@@ -11,6 +11,8 @@ var app = angular.module('app', ['ui.router']);
 //load our components (should be automated really)
 require('./routes')(app);
 require('./components/header/header')(app);
+require('./components/cookie/cookie')(app);
+require('./components/logo/logo')(app);
 require('./screens/home/home-screen')(app);
 
 // function requireAll(r) { r.keys().forEach(r); }

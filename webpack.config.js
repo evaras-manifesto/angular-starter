@@ -38,6 +38,6 @@ module.exports = {
             _: "lodash",
         })
     ],
-    devtool: 'eval-source-map',
+    devtool: 'source-map',
     target: 'async-node'
 };
