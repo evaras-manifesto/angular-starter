@@ -13,6 +13,8 @@ require('./routes')(app);
 require('./components/header/header')(app);
 require('./components/cookie/cookie')(app);
 require('./components/logo/logo')(app);
+require('./components/logindetails/logindetails')(app);
+require('./components/backbutton/backbutton')(app);
 require('./screens/home/home-screen')(app);
 
 // function requireAll(r) { r.keys().forEach(r); }

@@ -1,0 +1,32 @@
+<div class="o-section o-color--bg--gallery"
+    data-controller="formElements"
+    data-config='{"background":{"color":"o-color--bg--gallery"},"endpoint":{"ajax":false,"method":"PATCH","action":"/api/members/v2","params":{"api_key":"4c6cfnkm7abdwm9fe4t8ndyr"}},"ids":{"form":"fe-personal-details-form","notificationContainer":"fe-personal-details-notification-container"}}'>
+    <div class="o-container">
+        <div class="m-form-elements">
+            <form id="fe-personal-details-form" class="m-form-elements__form"
+                  data-context='{"form":"fe-personal-details-form","notificationContainer":"fe-personal-details-notification-container"}'
+                  data-context-errors='{"invalid":"There appears to be a problem with your details. Please correct any errors shown below.","warning":"Please check your details for any errors and if necessary, make any amends. If everything looks OK, just continue as normal.","success":"Your personal details have been updated successfully."}'
+                  novalidate>
+
+                <div class="m-form-elements__unchanged">
+                    <b class="m-form-elements__unchanged__title">
+                        {{$ctrl.header}}:
+                    </b>
+
+                    <div class="m-form-elements__unchanged__list">
+                            <b>{{$ctrl.usernamelabel}}:</b>
+                            {{$ctrl.username}} <br>
+                    </div>
+
+                    <div>
+                        <b>{{$ctrl.securityquestion}}</b>
+                    </div>
+
+                    <div>
+                    	{{$ctrl.updatelogin}}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

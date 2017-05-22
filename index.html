@@ -4,16 +4,29 @@
    </head>
    <body ng-app="app">
      <header-component url="'peter.com'"></header-component>
+     
      <cookie-component 
-     	text1="'my-text1'"
-     	text2="'my-text2'"
-     	cookie="'my-text3'"
-     	privacy="'my-text4'"
-     	accept="'my-text5'"
+     	text1="'header text'"
+     	text2="'header 2 text'"
+     	cookie="'This site contains cookies'"
+     	privacy="'http://www.privacy.com/url'"
+     	accept="'Do you accept the cookies policies?'"
      	>
      </cookie-component>
+
      <logo-component url="'tiki.com'"></logo-component>
 
+      <logindetails-component 
+     	header="'The following details cannot be changed online:'"
+     	usernamelabel="'Username'"
+     	username="'HSDPHMSWL'"
+     	securityquestion="''"
+     	updatelogin="'To change your username or security questions please call 0034 918 368 517.'"
+     	>
+     </logindetails-component>
+     
+     <backbutton-component />
+     
      <!-- screen contents -->
      <div ui-view></div>
 

@@ -17,15 +17,13 @@ module.exports = (app) => app.component('headerComponent', {
             this.$timeout = $timeout;
         }
 
-        //this request retrieves all repos for user nazzanuk
         exampleRequest() {
-            this.$http.get('https://api.github.com/users/nazzanuk/repos')
+            this.$http.get('https://api.github.com/users/evaras-manifesto/repos')
                 .then(response => {
                     console.info('response', response.data);
                 });
         }
 
-        //this runs automagically - we also now have access to our bindings
         $onInit() {
             console.info('headerComponent', this);
 
